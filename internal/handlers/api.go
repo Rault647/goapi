@@ -8,7 +8,7 @@ import (
 
 func Handler(r *chi.Mux) {
 	// Global middleware (Middleware applied to all api endpoints)
-	r.Use(chimiddle.StripSlaches) // Ignores trailing slashes in URL
+	r.Use(chimiddle.StripSlashes) // Ignores trailing slashes in URL
 
 	r.Route("/account", func(router chi.Router) {
 
