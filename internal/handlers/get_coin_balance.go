@@ -38,7 +38,7 @@ func GetCoinBalance(w http.ResponseWriter, r *http.Request) {
 
 	var tokenDetails *tools.CoinDetails
 	tokenDetails = (*database).GetUserCoins(params.Username)	// Call GetUserCoins from the instantiated database interface.
-	if tokenDetails = nil {
+	if tokenDetails == nil {
 		log.Error(err)
 		api.InternalErrorHandler(w)
 		return
